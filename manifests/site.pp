@@ -42,10 +42,17 @@ node default {
   #   class { 'my_class': }
 }
 node 'server2.abc.com' {
-include xyz
+#include roles::web
+#include xyz
 #include motdsample
 #$name1='hockey'
 #include motd
 #include apache
 #include vsftpd
+
+exec { "executing raghu script":
+	cwd => "/etc/puppetlabs/puppet",
+        command => "cp puppet.conf /tmp", 
+        path => ["/bin"],
+}
 }
