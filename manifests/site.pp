@@ -42,6 +42,8 @@ node default {
   #   class { 'my_class': }
 }
 node 'server2.abc.com' {
+include sshnew
+#include ssh
 #include roles::web
 #include xyz
 #include motdsample
